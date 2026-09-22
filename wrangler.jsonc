@@ -1,0 +1,13 @@
+{
+  // Static-only Worker: no `main`, so there is no Worker script — Cloudflare
+  // just serves everything under `directory`. This field is the Workers
+  // equivalent of the "Build output directory" that Pages projects have.
+  "name": "bahiamovement",
+  "compatibility_date": "2026-09-22",
+  "assets": {
+    "directory": "./public",
+    // Serves /costa-combat/promos/a/ from .../a/index.html
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
