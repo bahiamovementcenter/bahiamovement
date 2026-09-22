@@ -159,19 +159,42 @@ h1 .plus { color: var(--costa-gold); }
   letter-spacing: -0.01em;
   margin: 0.9rem 0 0.2rem;
 }
+.coach h3 .sur {
+  font-size: 0.58em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
 .coach .disc { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0; }
-.coach .traits { color: var(--grey); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0.5rem 0 0; }
+/* Credential line: plain statement of fact, per the guide's "specific, not
+   generic" voice. Gold is allowed on Paper as a rule, never as text. */
+.coach .cred {
+  margin: 0.45rem 0 0;
+  padding-left: 0.7rem;
+  border-left: 3px solid var(--costa-gold);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.coach .traits { color: var(--grey); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0.65rem 0 0; }
 
 /* ---------- amenities ---------- */
 
+/* Stacked and left-aligned on phones, to match the rest of the page. As a row
+   it becomes a band, so it centres as a group — equal-width columns left all
+   the slack piled up after the last item. */
 .amenities {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1rem var(--gap);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
   padding: var(--gap) 0;
   border-top: 1px solid rgba(0,0,0,0.1);
 }
-.amenity { display: flex; align-items: center; gap: 0.7rem; font-weight: 600; font-size: 0.95rem; }
+@media (min-width: 48rem) {
+  .amenities { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem var(--gap); }
+}
+.amenity { margin: 0; display: flex; align-items: center; gap: 0.7rem; font-weight: 600; font-size: 0.95rem; }
 .amenity svg { width: 1.4rem; height: 1.4rem; color: var(--steel); flex: none; }
 
 /* ---------- section heads ---------- */
